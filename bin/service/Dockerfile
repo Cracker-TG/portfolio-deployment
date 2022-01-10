@@ -1,0 +1,1 @@
+FROM crackerwinai/cr-portfolio-service:latest
