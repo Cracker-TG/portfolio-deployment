@@ -6,7 +6,7 @@ services:
         restart: always
         build: ./bin/service
         ports:
-            - '8081:8080'
+            - '8080'
         volumes:
             - ./config.env:/root/config.env
         links:
