@@ -2,6 +2,7 @@ version: '3.1'
 
 services:
     service:
+        container_name: port-service
         restart: always
         build: ./bin/service
         ports:
@@ -12,10 +13,15 @@ services:
             - mongo
 
     mongo:
-        container_name: mongo
+        container_name: port-mongo
+        restart: always
         build:
             context: ./bin/mongodb
         volumes:
             - /etc/timezone:/etc/timezone:ro
         ports:
-            - '27017:27017'
+
+            - '27017'
+networks:
+  default:
+    name: portnetwork
